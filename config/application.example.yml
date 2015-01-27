@@ -1,0 +1,6 @@
+SENDGRID_USERNAME:
+SENDGRID_PASSWORD: 
+
+#This just shows that we're storing our sendgrid password/username as ENV variables
+# but doesn't share the values of these keys.
+# DON'T PROVIDE VALUES IN THE EXAMPLE FILE DUMMY, IT WILL SHOW UP ON GITHUB
