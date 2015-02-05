@@ -12,7 +12,7 @@ skip_before_action :verify_authenticity_token, only: [:create]
       
       @user = User.find_by_email(params[:sender])
       #find the topic by using params[:subject]
-      @topic = Topic.find(params[:subject])
+      @topic = Topic.find_by_title(params[:subject])
       # assign the url to a variable after retrieving it from params["body-plain"]
 
       # Check if user is nil, if so, create and save a new user

@@ -20,17 +20,17 @@ development:
   #username: bart
   password: helloworld
 
-  test:
+test:
   adapter: postgresql
-  database: blocmarks
+  database: blocmarks_test
   #username: bart
   password: helloworld
 
-  production:
-  adapter: postgresql
-  database: blocmarks
-  #username: bart
-  password: helloworld
+# production:
+#   adapter: postgresql
+#   database: blocmarks
+#   #username: bart
+#   password: helloworld -this shit gets ignored by heroku
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
