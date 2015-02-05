@@ -9,7 +9,7 @@ skip_before_action :verify_authenticity_token, only: [:create]
 
     # I can put the message-splitting and business ass-magic here
       #find the user by using params[:sender]
-      binding.pry
+      
       @user = User.find_by_email(params[:sender])
       #find the topic by using params[:subject]
       @topic = Topic.find(params[:subject])
