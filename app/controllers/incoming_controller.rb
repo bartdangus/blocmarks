@@ -27,7 +27,7 @@ skip_before_action :verify_authenticity_token, only: [:create]
         topic.save!
       end
       #Now that we're sure we have a valid user and topic, build and save a new bookmark
-      bookmark = Bookmark.new(title: params["title"])
+      bookmark = Bookmark.new(url: params["body-plain"], topic: @topic)
       bookmark.save!
       #assuming all went well, which it probably didn't
       head 200
