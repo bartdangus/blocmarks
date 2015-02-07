@@ -1,0 +1,20 @@
+class TopicsController < ApplicationController
+ 
+  def index
+    @topics = Topic.all
+  end
+
+  def show
+    @topic =Topic.find(params[:id])
+  end
+
+  def new
+  end
+
+  def edit
+  end
+
+  def destroy
+    @topic =Topic.find_by_title(params["subject"])
+  end
+end
