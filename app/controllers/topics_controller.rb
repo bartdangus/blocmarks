@@ -4,14 +4,20 @@ class TopicsController < ApplicationController
     @topics = Topic.all
   end
 
-  def show
-    @topic =Topic.find(params[:id])
+  def new
+    @topic = Topic.new
   end
 
-  def new
+  def show
+    @topic = Topic.find(params[:id])
+  end
+
+  def create
+    @topic = Topic.new
   end
 
   def edit
+    @topic = Topic.find(params[:id])
   end
 
   def destroy

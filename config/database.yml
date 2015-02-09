@@ -14,6 +14,8 @@
 #   pool: 5
 #   timeout: 5000
 
+
+
 development:
   adapter: postgresql
   database: blocmarks
@@ -25,6 +27,7 @@ test:
   database: blocmarks_test
   #username: bart
   password: helloworld
+
 
 # production:
 #   adapter: postgresql

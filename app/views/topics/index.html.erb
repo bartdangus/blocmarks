@@ -2,8 +2,10 @@
 <p>Find me in app/views/topics/index.html.erb</p>
 
 
+  <%= link_to "New Topic", new_topic_path, class: 'btn btn-success' %>
+
+
 <!-- this shows all the topics which will be clickable links -->
-<% @topics.each do |topic| %>
-  <p><%= link_to topic.title, topic_path(topic.id) %></p>
-  
-<% end %>     
+  <% @topics.each do |topic| %>
+    <p><%= link_to topic.title, topic_path(topic.id) %></p>
+  <% end %>     
