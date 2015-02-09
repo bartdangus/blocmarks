@@ -1,0 +1,9 @@
+<h1>Bookmarks#show</h1>
+<p>Find me in app/views/bookmarks/show.html.erb</p>
+
+this will link to the edit page, and maybe a link to create a new bookmark
+
+<h1><%= @bookmark.url %></h1>
+
+
+  <%= link_to "Edit", topic_path_edit_bookmark_path(@topic, @bookmark), class: 'btn btn-success' %>

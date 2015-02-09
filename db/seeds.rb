@@ -12,4 +12,12 @@ require 'faker'
   Topic.create!(
     title: Faker::Lorem.word
     )
+
+  20.times do
+    Bookmark.create!(
+      # user: users.sample,
+      url: Faker::Internet.domain_name
+      # topic: topics.sample
+      )
+  end
 end
