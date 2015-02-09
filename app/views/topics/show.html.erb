@@ -1,4 +1,7 @@
 this is where for every bookmark with the same topic will show up
 
 <h1><%= @topic.title %></h1>
-<%= link_to "Delete", @topic, method: :destroy, class: 'btn btn-danger', data: {confirm: 'you sure playa?'} %>
+
+<% if (@topic).destroy? %>
+  <%= link_to "Delete", destroy_topic_path(@topic), method: :delete, class: 'btn btn-danger', data: {confirm: 'you sure playa?'} %>
+<% end %>
