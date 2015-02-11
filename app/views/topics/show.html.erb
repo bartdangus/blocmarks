@@ -4,5 +4,10 @@ this is where for every bookmark with the same topic will show up
 
 
   <%= link_to "Delete", @topic, method: :delete, class: 'btn btn-danger', data: {confirm: 'you sure playa?'} %>
+ <%= link_to "New Bookmark", new_topic_bookmark_path(@topic, @bookmark), class: 'btn btn-success' %>
 
- 
+<ul>
+<% @bookmarks.each do |bookmark| %>
+ <%= link_to bookmark.url, [@topic, bookmark] %>
+ <% end %>
+</ul>

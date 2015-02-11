@@ -7,9 +7,7 @@ Rails.application.routes.draw do
   get 'welcome/about'
 
   resources :topics do
-    get 'bookmarks/show'
-    get 'bookmarks/new'
-    get 'bookmarks/edit'
+    resources :bookmarks, except: [:index]
   end
 
   root to: 'welcome#index'

@@ -2,3 +2,14 @@
 <p>Find me in app/views/bookmarks/new.html.erb</p>
 
 should have blank fields for url/topic
+
+
+<%= form_for [@topic, Bookmark.new] do |f| %>
+  <div class="form-group">
+    <%= f.label :url %>
+    <%= f.text_field :url, class: 'form-control' %>
+    <%= f.submit "Save", class: 'btn btn-success' %>
+  </div>
+redirect_to [@topic]
+<% end %>
+
