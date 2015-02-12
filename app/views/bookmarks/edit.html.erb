@@ -1,4 +1,20 @@
-<h1>Bookmarks#edit</h1>
+<p>Bookmarks#edit</p>
 <p>Find me in app/views/bookmarks/edit.html.erb</p>
 
 this is where you would edit a single book mark, should be able to change the url, and topic, or delete all together
+
+<h1><%= @bookmark.url %></h1>
+
+<%= form_for [@topic] do |f| %>
+  <%= f.label :Topic %>
+  <%= f.text_field :title, class: 'form-control', placeholder: "change topic name" %>
+  <% end %>
+
+  <%= form_for [@topic, @bookmark] do |f| %>
+    <%= f.label :URL %>
+    <%= f.text_field :url, class: 'form-control', placeholder: "suck one" %>
+    <%= f.submit "Save", class: 'btn btn-success' %>
+    
+  <% end %>
+
+    

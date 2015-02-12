@@ -42,10 +42,19 @@ class BookmarksController < ApplicationController
       redirect_to topics_path
     end
   end
+
+  def update
+    @topic = Topic.find(params[:topic_id])
+    @bookmark = Bookmark.find(params[:id])
+    
+    if @bookmark.update(params)
+      redirect_to topics_path
+    else
+      flash[:error] = "There was an error saving, try again."
+      render :edit
+    end
+  end
 end
 
-def update
-  @topic = Topic.find(params[:topic_id])
-  @bookmark = Bookmark.find(params[:id])
-end
+
 

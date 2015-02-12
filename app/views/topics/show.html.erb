@@ -8,6 +8,6 @@ this is where for every bookmark with the same topic will show up
 
 <ul>
 <% @bookmarks.each do |bookmark| %>
- <%= link_to bookmark.url, [@topic, bookmark] %>
+ <li><%= link_to bookmark.url, [@topic, bookmark] %>
  <% end %>
 </ul>
