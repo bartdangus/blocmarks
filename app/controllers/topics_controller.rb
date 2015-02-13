@@ -6,6 +6,7 @@ class TopicsController < ApplicationController
 
   def new
     @topic = Topic.new
+    authorize @topic
   end
 
   def show
@@ -16,6 +17,7 @@ class TopicsController < ApplicationController
 
   def create
     @topic = Topic.new(params.require(:topic).permit(:title))
+    authorize @topic
     if @topic.save
       redirect_to @topic, notice: "Topic was saved."
     else 
@@ -26,11 +28,13 @@ class TopicsController < ApplicationController
 
   def edit
     @topic = Topic.find(params[:id])
+    authorize @topic
   end
 
   def destroy
     @topic =Topic.find(params[:id])
     title = @topic.title
+    authorize @topic
 
     if @topic.destroy
       flash[:notice] = "\"#{title}\" was deleted. "

@@ -3,23 +3,26 @@ class BookmarksController < ApplicationController
     @topic = Topic.find(params[:topic_id])
     @bookmark = Bookmark.find(params[:id])
     @bookmarks = Bookmark.all
+    authorize @bookmark
   end
 
   def new
     @topic = Topic.find(params[:topic_id])
     @bookmark = Bookmark.new
+    authorize @bookmark
   end
 
   def edit
     @topic = Topic.find(params[:topic_id])
     @bookmark = Bookmark.find(params[:id])
+    authorize @bookmark
   end
 
   def create
     @topic = Topic.find(params[:topic_id])
     @bookmark = Bookmark.new(params[:bookmark].permit!)
     @bookmark.topic = @topic
-
+    authorize @bookmark
     if @bookmark.save
       flash[:notice] = "Bookmark was saved."
       redirect_to [@topic, @bookmark]
@@ -32,7 +35,7 @@ class BookmarksController < ApplicationController
   def destroy
     @topic = Topic.find(params[:topic_id])
     @bookmark = Bookmark.find(params[:id])
-    
+    authorize @bookmark
 
     if @bookmark.destroy
       flash[:notice] = "shits destroyed"
@@ -46,8 +49,8 @@ class BookmarksController < ApplicationController
   def update
     @topic = Topic.find(params[:topic_id])
     @bookmark = Bookmark.find(params[:id])
-    
-    if @bookmark.update(params)
+    authorize @bookmark
+    if @bookmark.update(params[:bookmark].permit!)
       redirect_to topics_path
     else
       flash[:error] = "There was an error saving, try again."
