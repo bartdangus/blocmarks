@@ -22,7 +22,9 @@ class BookmarksController < ApplicationController
     @topic = Topic.find(params[:topic_id])
     @bookmark = Bookmark.new(params[:bookmark].permit!)
     @bookmark.topic = @topic
+    @bookmark.user = current_user
     authorize @bookmark
+
     if @bookmark.save
       flash[:notice] = "Bookmark was saved."
       redirect_to [@topic, @bookmark]
@@ -35,6 +37,7 @@ class BookmarksController < ApplicationController
   def destroy
     @topic = Topic.find(params[:topic_id])
     @bookmark = Bookmark.find(params[:id])
+    
     authorize @bookmark
 
     if @bookmark.destroy
@@ -50,6 +53,7 @@ class BookmarksController < ApplicationController
     @topic = Topic.find(params[:topic_id])
     @bookmark = Bookmark.find(params[:id])
     authorize @bookmark
+
     if @bookmark.update(params[:bookmark].permit!)
       redirect_to topics_path
     else
