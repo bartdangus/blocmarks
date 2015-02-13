@@ -16,6 +16,7 @@ class BookmarksController < ApplicationController
     @topic = Topic.find(params[:topic_id])
     @bookmark = Bookmark.find(params[:id])
     authorize @bookmark
+
   end
 
   def create
