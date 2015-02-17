@@ -8,8 +8,11 @@ Rails.application.routes.draw do
 
   resources :topics do
     resources :bookmarks, except: [:index]
-      resources :likes, only: [:create, :destroy]
   end
+
+    resources :bookmarks, except: [:index] do 
+      resources :likes, only: [:create, :destroy]
+    end
 
   root to: 'welcome#index'
 

@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_many :likes, dependent: :destroy
 
 #liked method takes a bookmark object and returns a like object if one exists
-  def liked(post)
+  def liked(bookmark)
     likes.where(bookmark_id: bookmark.id).first
   end
 end 

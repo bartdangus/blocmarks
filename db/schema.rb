@@ -28,11 +28,10 @@ ActiveRecord::Schema.define(version: 20150214000645) do
   add_index "bookmarks", ["user_id"], name: "index_bookmarks_on_user_id", using: :btree
 
   create_table "likes", force: :cascade do |t|
-    t.string   "refernces"
-    t.string   "bookmark"
-    t.string   "user"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "bookmark_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "topics", force: :cascade do |t|
