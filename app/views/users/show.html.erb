@@ -1,2 +1,12 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>Bookmarks You Created</h1>
+
+
+<% @bookmarks.each do |bookmark| %>
+  <li><%= link_to bookmark.url, [@topic, bookmark] %></li>
+<% end %>
+
+<h1>Bookmarks You Liked</h1>
+
+<% @likes.each do |like| %>
+  <li><%= link_to like.bookmark.url, [@topic, like.bookmark] %></li>
+<% end %>

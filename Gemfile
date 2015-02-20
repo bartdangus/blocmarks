@@ -7,6 +7,8 @@ gem 'rails', '4.2.0'
 #gem 'sqlite3'
 #This replaces the sqlite3, with a postsql db so it works with heroku
 gem 'pg'
+gem 'pry'
+
 gem 'rails_12factor', group: :production 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

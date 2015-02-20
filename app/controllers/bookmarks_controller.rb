@@ -1,11 +1,15 @@
 class BookmarksController < ApplicationController
   def show
-    #@topic = topic
-    #@topic = Topic.find(params[:topic_id])
+    # @topic = Topic.where(topic_id: params[:topic_id])   ====> [topic1, topic2, topic3....]
     @bookmark = Bookmark.find(params[:id])
     @bookmarks = Bookmark.all
+    #authorize @bookmark
     @topic = @bookmark.topic
-    authorize @bookmark
+    
+
+    # if request.path != bookmark_path(@bookmark)
+    #   redirect_to @bookmark, status: :moved_permanently
+    # end
   end
 
   def new
@@ -15,8 +19,9 @@ class BookmarksController < ApplicationController
   end
 
   def edit
-    @topic = Topic.find(params[:topic_id])
+    #@topic = Topic.find(params[:topic_id])
     @bookmark = Bookmark.find(params[:id])
+    @topic = @bookmark.topic
     authorize @bookmark
 
   end

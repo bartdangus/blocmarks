@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  # extend FriendlyId
+  # friendly_id :email, use: [:slugged, :history]
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -12,4 +15,8 @@ class User < ActiveRecord::Base
   def liked(bookmark)
     likes.where(bookmark_id: bookmark.id).first
   end
+
+  # def should_generate_new_friendly_id?
+  #     new_record?
+  #   end
 end 

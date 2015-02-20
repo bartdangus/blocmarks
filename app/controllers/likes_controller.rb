@@ -12,7 +12,7 @@ def create
 
   else
     flash[:error] = "Looks like you didn't like it enough."
-    redirect_to @bookmark
+    redirect_to @topic
   end
 end
 
