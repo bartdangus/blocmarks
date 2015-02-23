@@ -1,12 +1,15 @@
-<h1>Bookmarks You Created</h1>
+<h1>Bookmarks You've Created</h1>
 
-
-<% @bookmarks.each do |bookmark| %>
-  <li><%= link_to bookmark.url, [@topic, bookmark] %></li>
+<% @user.bookmarks.each do |bookmark| %>
+<%= link_to bookmark.url  %>
 <% end %>
 
-<h1>Bookmarks You Liked</h1>
-
-<% @likes.each do |like| %>
-  <li><%= link_to like.bookmark.url, [@topic, like.bookmark] %></li>
+<h1> Bookmarks You've Liked </h1>
+<% @user.likes.each do |like| %>
+<%= link_to like.bookmark.url %>
 <% end %>
+
+<li><%= link_to "Back to Topics", topics_path, class: 'btn btn-success' %></li>
+
+
+

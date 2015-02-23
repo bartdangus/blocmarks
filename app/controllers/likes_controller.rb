@@ -8,11 +8,11 @@ def create
 
   if like.save
     flash[:notice] = "You liked this big time."
-    redirect_to @bookmark
+    redirect_to topics_path
 
   else
     flash[:error] = "Looks like you didn't like it enough."
-    redirect_to @topic
+    redirect_to   topics_path
   end
 end
 
@@ -23,11 +23,11 @@ def destroy
 
   if like.destroy
     flash[:notice] = "You unliked this"
-    redirect_to @bookmark
+    redirect_to topics_path
 
   else
     flash[:error] = "You didn't unlike this hard enough"
-    redirect_to @bookmark
+    redirect_to topics_path
   end
 end
 
