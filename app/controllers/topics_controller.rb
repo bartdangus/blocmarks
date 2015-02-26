@@ -39,6 +39,7 @@ class TopicsController < ApplicationController
 
   def destroy
     @topic =Topic.find(params[:id])
+    #@bookmark = Bookmark.where(topic_id: params[:id])
     title = @topic.title
     authorize @topic
 

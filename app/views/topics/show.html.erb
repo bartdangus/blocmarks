@@ -3,7 +3,7 @@ this is where for every bookmark with the same topic will show up
 <h1><%= @topic.title %></h1>
 
 
-  <%= link_to "Delete", @topic, method: :delete, class: 'btn btn-danger', data: {confirm: 'you sure playa?'} %>
+<!--   <%= link_to "Delete", @topic, method: :delete, class: 'btn btn-danger', data: {confirm: 'you sure playa?'} %> I guess I don't need basic users the ability to delete topics--> 
  <%= link_to "New Bookmark", new_topic_bookmark_path(@topic, @bookmark), class: 'btn btn-success' %>
 
 <ul>
